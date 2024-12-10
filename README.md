@@ -12,4 +12,4 @@ The main objective is to create a context that keeps track of a counter and then
 
 ## Instructions
 
-Fork the repo and provide the necessary code so that whenever the button is clicked, the count stored in the Counter Context is updated and shown in the other components
+Fork the repo and provide the necessary code so that whenever the button is clicked, the count stored in the Counter Context is updated and shown in the other components.
