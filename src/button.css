@@ -1,10 +1,10 @@
 .button-container {
-  text-align: center; /* Aligns buttons horizontally in their container */
+  text-align: center; 
 }
 
 .btn {
-  display: inline-block; /* Makes buttons appear inline */
-  margin: 0 5px; /* Space between buttons */
+  display: inline-block; 
+  margin: 0 5px; 
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
