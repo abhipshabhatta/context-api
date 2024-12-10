@@ -1,40 +1,41 @@
-import "./App.css"
-
-import ButtonComp from "./components/ButtonComp"
-// import { useContext } from "react"
-//import { CountContext } from "./context/CountContext"
-import HeaderComp from "./components/HeaderComp"
+import React, { useContext, useState } from "react";
+import HeaderComp from "./components/HeaderComp";
+import ButtonComp from "./components/ButtonComp";
+import { CountContext } from "./context/CountContextProvider";
 
 function App() {
-	//const { count, setCount } = useContext(CountContext)
+    const { count } = useContext(CountContext);
+    const [user, setUser] = useState(null); // Track login state
 
-	const user = null // change this to later to the use context user ❗
+    const handleLogin = () => {
+        setUser(user ? null : { loggedIn: true });
+    };
 
-	// const handleClick = () => {
-	// 	setCount((prev) => prev + 1)
-	// }
-
-	//const handleLogIn = () => {
-	// }
-
-	return (
-		<main
-			className="app"
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				gap: "1em",
-				backgroundColor: user ? "#024d1021" : "#4d020221",
-				padding: ".5em",
-			}}
-		>
-			<HeaderComp />
-			<ButtonComp text="add" onclick={() => true} />
-			Your result is dynamic count here ...
-			{/* You'll need another button comp here later */}
-			{user && <div className="alert">You are now logged in !!!</div>}
-		</main>
-	)
+    return (
+        <div className="App" style={{ textAlign: "center", padding: "20px" }}>
+            <HeaderComp />
+            <p style={{ fontSize: "20px" }}>The result is: {count}</p>
+            <ButtonComp />
+            <button
+                onClick={handleLogin}
+                style={{
+					padding: "10px 20px",
+					fontSize: "18px",
+					cursor: "pointer",
+					marginTop: "10px",
+					backgroundColor: user ? "Brown" : "black",
+					color: "white",
+					border: "none",
+					borderRadius: "5px",
+					width: "500px",
+					textAlign: "center",
+                }}
+            >
+                {user ? "Logout" : "Login"}
+            </button>
+            {user && <p style={{ marginTop: "10px", fontSize: "16px" }}>You are now logged in !!!</p>}
+        </div>
+    );
 }
 
-export default App
+export default App;

@@ -1,5 +1,10 @@
-const LittleSpan = () => {
-	return <span> dynamic count here ... </span>
-}
+import React, { useContext } from "react";
+import { CountContext } from "../context/CountContextProvider";
 
-export default LittleSpan
+const LittleSpan = () => {
+    const { count } = useContext(CountContext);
+
+    return <span style={{ fontSize: "20px" }}>Count: {count}</span>;
+};
+
+export default LittleSpan;

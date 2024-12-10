@@ -1,33 +1,18 @@
-* {
-  box-sizing: border-box;
-
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+button:focus {
+  outline: none;
+}
+
+.App {
   text-align: center;
-  position: relative;
-
-}
-
-#root span {
-  position: absolute;
-  top: -107px;
-  right: 28%;
-  transform: translateX(-50%);
-  font-size: 9em;
-  opacity: 0.7;
-  filter: blur(2px);
-  width: 120px;
-  min-width: fit-content;
-  display: block;
-}
-
-.alert {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
 }

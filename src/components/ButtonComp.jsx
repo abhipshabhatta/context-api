@@ -1,24 +1,28 @@
-import PropTypes from "prop-types"
+import React, { useContext } from "react";
+import { CountContext } from "../context/CountContextProvider";
 
-const ButtonComp = ({ text, onclick }) => {
-	const user = null // change this to later to the use context user ❗
+const ButtonComp = () => {
+    const { count, setCount } = useContext(CountContext);
 
-	const handleClick = () => {
-		onclick()
-	}
-	return (
-		<button
-			style={{ color: user ? "#a1fc9f" : "#fcb9b9" }}
-			onClick={handleClick}
-		>
-			{text}
-		</button>
-	)
-}
+    const handleAdd = () => {
+        setCount(count + 1);
+    };
 
-ButtonComp.propTypes = {
-	text: PropTypes.string.isRequired,
-	onclick: PropTypes.func.isRequired,
-}
+    return (
+        <button class
+            onClick={handleAdd}
+            style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                cursor: "pointer",
+                margin: "20px",
+				width: "500px", // Adjusts the button length
+				textAlign: "center"
+            }}
+        >
+            Add
+        </button>
+    );
+};
 
-export default ButtonComp
+export default ButtonComp;
